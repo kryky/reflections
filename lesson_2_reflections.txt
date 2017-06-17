@@ -1,0 +1,7 @@
+What happens when you initialize a repository? Why do you need to do it?
+
+It initialize a repository, so now it tracks very commit we do and saves the history.
+
+How is the staging area different from the working directory and the repository? What value do you think it offers?
+
+It's an intermediar box so we can add slowly each file we want and after that commit them together.
