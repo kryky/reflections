@@ -16,3 +16,4 @@
 -git remote add 'name' 'link-github'		(create a remote and link it to github)
 -git remote -v								(check if the remote was created correctly)
 -git push origin master						(push the branch master to the remote origin)
+-git pull origin master						(pull the changes made on remote origin to the local directory)
