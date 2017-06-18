@@ -17,3 +17,4 @@
 -git remote -v								(check if the remote was created correctly)
 -git push origin master						(push the branch master to the remote origin)
 -git pull origin master						(pull the changes made on remote origin to the local directory)
+-git fetch origin							(create a new branch on local repository and pull from origin to it)
