@@ -1,0 +1,18 @@
+A plugin generally provides a set of goals and which can be executed using following syntax:
+-mvn [plugin-name]:[goal-name]
+
+For example, a Java project can be compiled with the maven-compiler-plugin's compile-goal by running following command:
+-mvn compiler:compile
+
+List of few common plugins:
+-clean		(clean up target after the build. Deletes the target directory)
+-compiler 	(compiles Java source files)
+-surefire	(run the JUnit unit tests. Creates test reports)
+-jar 		(builds a JAR file from the current project)
+-war		(builds a WAR file from the current project)
+-javadoc	(generates Javadoc for the project)
+-antrun		(runs a set of ant tasks from any phase mentioned of the build)
+
+
+Maven uses archetype plugins to create projects. To create a simple java application, we'll use maven-archetype-quickstart plugin. In example below, We'll create a maven based java application project in C:\MVN folder.
+-C:\MVN>mvn archetype:generate
