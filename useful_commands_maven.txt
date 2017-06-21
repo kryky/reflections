@@ -14,5 +14,60 @@ List of few common plugins:
 -antrun		(runs a set of ant tasks from any phase mentioned of the build)
 
 
+
+
 Maven uses archetype plugins to create projects. To create a simple java application, we'll use maven-archetype-quickstart plugin. In example below, We'll create a maven based java application project in C:\MVN folder.
--C:\MVN>mvn archetype:generate
+-C:\MVN>mvn archetype:generates   		(quickstart archetype plugin to create a simple java application here)(default option, 7: 													maven-archetype-quickstart)
+
+
+
+
+-mvn clean package	(built your project and created final jar file)(build and test)
+-mvn clean compile
+
+
+Having your own library specific to project, which is very usual case and it can contain jars which may not be available in any repository for maven to download from. If your code is using this library with Maven then Maven build will fail because it cannot download or refer to this library during compilation phase.
+
+	<dependency>
+         <groupId>ldapjdk</groupId>
+         <artifactId>ldapjdk</artifactId>
+         <scope>system</scope>
+         <version>1.0</version>
+         <systemPath>${basedir}\src\lib\ldapjdk.jar</systemPath>
+    </dependency>
+
+(External dependencies (library jar location) can be configured in pom.xml in same way as other dependencies.
+
+Specify groupId same as name of the library.
+
+Specify artifactId same as name of the library.
+
+Specify scope as system.
+
+Specify system path relative to project location.)
+
+
+
+-mvn site		(create documentation of the application in one go)(Maven has created a site within target directory)
+
+
+
+-mvn clean package -U 		(In case of SNAPSHOT, Maven automatically fetches the latest SNAPSHOT on daily basis. You can force maven to 								download latest snapshot build using -U switch to any maven command)
+
+
+-mvn release:clean		(it cleans the workspace in case the last release process was not successful)
+-mvn release:rollback	(rollback the changes done to workspace code and configuration in case the last release process was not successful)
+-mvn release:prepare	(Performs multiple number of operations)
+
+The oprations performed:
+Checks whether there are any uncommitted local changes or not
+Ensures that there are no SNAPSHOT dependencies
+Changes the version of the application and removes SNAPSHOT from the version to make release
+Update pom files to SVN.
+Run test cases
+Commit the modified POM files
+Tag the code in subversion
+Increment the version number and append SNAPSHOT for future release
+Commit the modified POM files to SVN
+
+-mvn release:perform 	(checks out the code using the previously defined tag and run the Maven deploy goal to deploy the war or built 								artifact to repository)
