@@ -3,7 +3,7 @@
 -git status									(check the status of the staging area and of the repository)
 -git diff 'id' 'id'							(see the differences between two commits)
 -git diff 									(between diretory and staging area)
--git diff --stagged 						(between staging area and repository)
+-git diff --staged 						(between staging area and repository)
 -git diff add								(add a file to the staging area)
 -git diff rm								(remove a file from the staging area)
 -git branch 'name'							(create a new branch)
